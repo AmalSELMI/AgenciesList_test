@@ -2,32 +2,32 @@
   "data": [
     {
       "id": "225b75df-8e56-46dd-8fa2-693ab7c48f31",
-      "name": "Agency Elec 1",
+      "name": "Super Electrics",
       "manager": "Mr white",
       "activity": "Électrique"
     },
     {
       "id": "225b75df-8e56-46dd-8fa2-693ab7c491",
-      "name": "Bruni",
-      "manager": "Mr white",
+      "name": "Bruni thunderbolt",
+      "manager": "Mr red",
       "activity": "Électrique"
     },
     {
       "id": "225b75df-8e56-46dd-8fa2-693ab7c48f54",
-      "name": "Agency Clim 2",
+      "name": "Colling agency",
       "manager": "Mr blue",
       "activity": "Climatisation"
     },
     {
       "id": "225b75df-8e56-46dd-8fa2-693ab7c48f38",
-      "name": "Agency Clim 3",
-      "manager": "Mr red",
+      "name": "Freeze Ease",
+      "manager": "Mr clim",
       "activity": "Climatisation"
     },
     {
       "id": "225b75df-8e56-46dd-8fa2-693ab7c48f76",
-      "name": "Agency Plomb 3",
-      "manager": "Mr blue",
+      "name": "SOS Plomberie",
+      "manager": "Mme Plomberie",
       "activity": "Plomberie"
     }
   ]

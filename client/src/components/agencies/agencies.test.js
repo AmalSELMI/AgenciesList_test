@@ -22,6 +22,17 @@ const agencies = [
 ];
 
 describe("Agencies", () => {
+
+  beforeEach(() => {
+    Object.defineProperty(window, "localStorage", {
+      value: {
+        getItem: jest.fn(() => null),
+        setItem: jest.fn(() => null)
+      },
+      writable: true
+    });
+  });
+
   it("should render default content", () => {
     render(
       <ThemeProvider theme={theme}>
@@ -52,5 +63,29 @@ describe("Agencies", () => {
     expect(select).toHaveValue("225b75df-8e56-46dd-8fa2-693ab7c491");
     expect(screen.getByText("Manager: Mr white")).toBeVisible();
     expect(screen.getByText("Activité: Électrique")).toBeVisible();
+  });
+
+  it("Should call localStorage getItem on render", () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <Agencies agencies={agencies} />
+      </ThemeProvider>
+    );
+    expect(window.localStorage.getItem).toHaveBeenCalledTimes(1);
+  });
+
+  it("Should call localStorage setItem on select change", () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <Agencies agencies={agencies} />
+      </ThemeProvider>
+    );
+    const select = screen.getByRole("combobox", { name: "Agency" });
+    userEvent.selectOptions(select, ["225b75df-8e56-46dd-8fa2-693ab7c491"]);
+
+    expect(window.localStorage.setItem).toHaveBeenCalledTimes(1);
+    expect(window.localStorage.setItem).toHaveBeenCalledWith(
+      "selectedAgency", "{\"id\":\"225b75df-8e56-46dd-8fa2-693ab7c491\",\"name\":\"Bruni\",\"manager\":\"Mr white\",\"activity\":\"Électrique\"}"
+    );
   });
 });

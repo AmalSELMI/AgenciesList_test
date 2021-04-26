@@ -11,7 +11,7 @@ const AgenciesPage = () => {
     path: "data",
     condition: true,
   });
-  console.log("data", data);
+  
   if (agenciesLoading) {
     return (
       <Typography className={classes.title}>Agencies are loading...</Typography>

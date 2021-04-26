@@ -1,0 +1,14 @@
+{
+	"editor.tabSize": 2,
+	"window.zoomLevel": 1,
+	"editor.insertSpaces": true,
+	"editor.scrollBeyondLastLine": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+    "source.fixAll": true,
+	},
+	"eslint.validate": [
+		"javascript","javascriptreact"
+	],
+	"eslint.run": "onSave"
+}
